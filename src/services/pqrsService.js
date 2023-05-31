@@ -11,7 +11,7 @@ class pqrsService {
     async fetchAll() {
         const token = localStorage.getItem("token");
         try {
-            const response = await fetch("http://localhost:3000/pqrs", {
+            const response = await fetch("https://api-pqrs.onrender.com/pqrs", {
                 method: "GET",
                 headers: { "Content-type": "application/json; charset=UTF-8","Authorization":`Bearer ${token}` }
             });
@@ -24,7 +24,7 @@ class pqrsService {
     async fetchGetId() {
         const user = JSON.parse(localStorage.getItem("user"));
         try {
-            const response = await fetch(`http://localhost:3000/pqrs/user/${user._id}`, {
+            const response = await fetch(`https://api-pqrs.onrender.com/pqrs/user/${user._id}`, {
                 method: "GET",
                 headers: { "Content-type": "application/json; charset=UTF-8"}
             });
